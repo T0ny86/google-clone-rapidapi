@@ -1,7 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-export const Routes = () => {
-  return (
-    <div>Routes</div>
-  )
-}
+import Results from './Results';
+
+const Routers = () => (
+  <div className="p-4">
+    <Routes>
+      <Route path='/' element={<Navigate from='/' to='/search' />} />
+      <Route exact path="/search" element={<Results />} />
+      <Route exact path="/images" element={<Results />} />
+      <Route exact path="/news" element={<Results />} />
+      <Route exact path="/videos" element={<Results />} />
+      <Route exact path="/search" element={<Results />} />
+    </Routes>
+  </div>
+
+);
+export default Routers
